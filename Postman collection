@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "e0098794-ffb6-4c39-b4df-960998aef3ac",
+		"name": "Bus Ticket Reservation System",
+		"description": "Collection of API endpoints for Bus Ticket Reservation System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37116412"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"testuser\",\n  \"password\": \"testpassword\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Buses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/buses/search?departureLocation=CityA&arrivalLocation=CityB&departureDate=2023-07-21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"buses",
+						"search"
+					],
+					"query": [
+						{
+							"key": "departureLocation",
+							"value": "CityA"
+						},
+						{
+							"key": "arrivalLocation",
+							"value": "CityB"
+						},
+						{
+							"key": "departureDate",
+							"value": "2023-07-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Available Seats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/seats/available?busId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"seats",
+						"available"
+					],
+					"query": [
+						{
+							"key": "busId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reserve Seat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/reservations/reserve?userId=1&seatId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reservations",
+						"reserve"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "seatId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
